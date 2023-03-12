@@ -1,4 +1,4 @@
-let locationInfo = {}
+let locationInfo = []
 
 function location (city, country) {
     this.city = city
@@ -6,8 +6,11 @@ function location (city, country) {
 }
 
 export const currentTemp = () => {
+    // Empties the array each time this function is ran
+    locationInfo = []
     let userInput = searchbar.value
 
+    // Gets the weather of the location the user inputs
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=2e4d099728cef11505f832bb292f954b`, {mode: 'cors'})
         .then(function(response) {
             return response.json();
@@ -19,11 +22,16 @@ export const currentTemp = () => {
             // console.log(response.weather[0].description)
         
             let storedLocation = new location(response.name, response.sys.country)
-            console.log(storedLocation)
             locationInfo.push(storedLocation)
-        });
-        console.log(locationInfo)  
+            locationInfo.push(response.main)
+            locationInfo.push(response.weather[0].description)
+        });  
+        console.log(locationInfo)
+
+        // Clears searchbar
+        searchbar.value = ''
 }
+
 
 // export const getForecast = () => {
 //     let userInput = searchbar.value
