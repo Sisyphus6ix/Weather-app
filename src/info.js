@@ -6,7 +6,7 @@ function location (city, country) {
 }
 
 export const currentTemp = () => {
-    // Empties the array each time this function is ran
+    // Empties the array each time this function is called
     locationInfo = []
     let userInput = searchbar.value
 
@@ -26,7 +26,7 @@ export const currentTemp = () => {
             locationInfo.push(response.main)
             locationInfo.push(response.weather[0].description)
         });  
-        console.log(locationInfo)
+        // console.log(locationInfo)
 
         // Clears searchbar
         searchbar.value = ''
