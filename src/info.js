@@ -1,13 +1,13 @@
-let locationInfo = []
+export let locationInfo = []
 
 function location (city, country) {
     this.city = city
     this.country = country
 }
 
-export const currentTemp = () => {
+export const searchedLocation = () => {
     // Empties the array each time this function is called
-    locationInfo = []
+    // locationInfo = []
     let userInput = searchbar.value
 
     // Gets the weather of the location the user inputs
@@ -17,9 +17,6 @@ export const currentTemp = () => {
         })
         .then(function(response) {
             // console.log(response)
-            // console.log(`${response.name}, ${response.sys.country}`)
-            // console.log(response.main)
-            // console.log(response.weather[0].description)
         
             let storedLocation = new location(response.name, response.sys.country)
             locationInfo.push(storedLocation)
@@ -30,6 +27,8 @@ export const currentTemp = () => {
 
         // Clears searchbar
         searchbar.value = ''
+
+        return locationInfo
 }
 
 
