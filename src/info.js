@@ -1,5 +1,9 @@
 export let locationInfo = []
 
+const emptyArray = (location) => {
+    location = []
+}
+
 function location (city, country) {
     this.city = city
     this.country = country
@@ -7,7 +11,8 @@ function location (city, country) {
 
 export const searchedLocation = () => {
     // Empties the array each time this function is called
-    // locationInfo = []
+    emptyArray(locationInfo)
+
     let userInput = searchbar.value
 
     // Gets the weather of the location the user inputs
