@@ -3,33 +3,33 @@ function location (city, country) {
     this.country = country
 }
 
-export const searchedLocation = (array) => {
+export const searchedLocation = () => {
     // Empties the array each time this function is called
-    array = []
+    let array = []
 
     let userInput = searchbar.value
 
-    // Gets the weather of the location the user inputs
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=2e4d099728cef11505f832bb292f954b`, {mode: 'cors'})
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(response) {
-            // console.log(response)
+        // Gets the weather of the location the user inputs
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=2e4d099728cef11505f832bb292f954b`, {mode: 'cors'})
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(response) {
+                // console.log(response)
 
-            let locationDetails = { 
+                let locationDetails = { 
                 location: new location(response.name, response.sys.country),
                 tempature: response.main,
                 description: response.weather[0].description
-            }
+                }
 
             array.push(locationDetails)
             // console.log(array[0])
-            return array
         });
-
-        // Clears searchbar
-        searchbar.value = ''
+    
+    // Clears searchbar
+    searchbar.value = ''
+    return array
 }
 
 

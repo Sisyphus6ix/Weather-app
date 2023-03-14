@@ -3,4 +3,5 @@ This project is created for the sole purpose of learning and part of the "The Od
 
 
 ### Things to do
-- Get weather API
+- Style page with weather data
+- Make page mobile responsive
