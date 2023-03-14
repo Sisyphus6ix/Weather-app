@@ -1,4 +1,4 @@
-import { locationInfo } from "../info"
+import { storedLocation } from "../info"
 
 let mainInfo = document.getElementsByClassName('main')[0]
 

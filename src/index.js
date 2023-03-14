@@ -1,7 +1,7 @@
-import { locationInfo, searchedLocation } from "./info"
+import { searchedLocation } from "./info"
 import { renderPage } from "./dom/render"
 
 const submitBtn = document.getElementById('submitBtn')
 
-renderPage(locationInfo)
+// renderPage()
 submitBtn.addEventListener('click', searchedLocation)

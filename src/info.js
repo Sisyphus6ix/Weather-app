@@ -1,17 +1,11 @@
-export let locationInfo = []
-
-const emptyArray = (location) => {
-    location = []
-}
-
 function location (city, country) {
     this.city = city
     this.country = country
 }
 
-export const searchedLocation = () => {
+export const searchedLocation = (array) => {
     // Empties the array each time this function is called
-    emptyArray(locationInfo)
+    array = []
 
     let userInput = searchbar.value
 
@@ -22,18 +16,20 @@ export const searchedLocation = () => {
         })
         .then(function(response) {
             // console.log(response)
-        
-            let storedLocation = new location(response.name, response.sys.country)
-            locationInfo.push(storedLocation)
-            locationInfo.push(response.main)
-            locationInfo.push(response.weather[0].description)
-        });  
-        // console.log(locationInfo)
+
+            let locationDetails = { 
+                location: new location(response.name, response.sys.country),
+                tempature: response.main,
+                description: response.weather[0].description
+            }
+
+            array.push(locationDetails)
+            // console.log(array[0])
+            return array
+        });
 
         // Clears searchbar
         searchbar.value = ''
-
-        return locationInfo
 }
 
 
