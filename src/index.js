@@ -5,6 +5,6 @@ const submitBtn = document.getElementById('submitBtn')
 
 
 submitBtn.addEventListener('click', () => {
-    const data = searchedLocation()
-    renderPage(data)
+    const weatherData = searchedLocation()
+    renderPage(weatherData)
 })

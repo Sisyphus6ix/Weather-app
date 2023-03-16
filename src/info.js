@@ -19,12 +19,12 @@ export const searchedLocation = () => {
 
                 let locationDetails = { 
                 location: new location(response.name, response.sys.country),
-                tempature: response.main,
-                description: response.weather[0].description
+                temperature: response.main,
+                description: response.weather[0].description,
+                wind: response.wind.speed
                 }
 
             array.push(locationDetails)
-            // console.log(array[0])
         });
     
     // Clears searchbar
