@@ -3,14 +3,14 @@ function location (city, country) {
     this.country = country
 }
 
-export const searchedLocation = () => {
+export const searchedLocation = async () => {
     // Empties the array each time this function is called
     let array = []
 
     let userInput = searchbar.value
 
         // Gets the weather of the location the user inputs
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=2e4d099728cef11505f832bb292f954b`, {mode: 'cors'})
+       await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=2e4d099728cef11505f832bb292f954b`, {mode: 'cors'})
             .then(function(response) {
                 return response.json();
             })
