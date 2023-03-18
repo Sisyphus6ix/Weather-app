@@ -7,3 +7,8 @@
     display: flex;
     gap: 20px;
 }
+
+.extraDetails {
+    display: flex;
+    gap: 30px;
+}
