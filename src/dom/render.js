@@ -18,29 +18,35 @@ export const renderPage = (data) => {
 // }
 
 const displayWeather = (data) => {
-   let temp_cloudContainer = document.createElement('div')
-   let temperatures = document.createElement('div')
-   let clouds = document.createElement('div')
-   let todayTemp = document.createElement('p')
-   let highLowTempContainer = document.createElement('div')
-   let lowTemp = document.createElement('p')
-   let highTemp = document.createElement('p')
-   let cloudDetails = document.createElement('p')
-   
-   temp_cloudContainer.setAttribute('class', 'tempDiv')
-   temperatures.setAttribute('class', 'degrees')
-   clouds.setAttribute('class', 'cloudInfo')
-   todayTemp.innerText = `${data[0].temperature.temp}F°`
-   lowTemp.innerText = `${data[0].temperature.temp_min}`
-   highTemp.innerText = `${data[0].temperature.temp_max}`
+   let generalInfo = document.createElement('div')
+   let weatherCondition = document.createElement('h3')
+   let degreesContainer = document.createElement('div')
+   let degrees = document.createElement('h1')
+   let degreesDetails = document.createElement('div')
+   let degreeHigh = document.createElement('p')
+   let degreeLow = document.createElement('p')
+   let degreeFeel = document.createElement('p')
 
-   temperatures.appendChild(todayTemp)
-   highLowTempContainer.appendChild(lowTemp)
-   highLowTempContainer.appendChild(highTemp)
-   temperatures.appendChild(highLowTempContainer)
-   temp_cloudContainer.appendChild(temperatures)
-   temp_cloudContainer.appendChild(clouds)
-   mainInfo.appendChild(temp_cloudContainer)
+   generalInfo.setAttribute('class', 'generalInfo')
+   weatherCondition.setAttribute('class', 'condition')
+   degreesContainer.setAttribute('class', 'degreesContainer')
+   degrees.setAttribute('class', 'degrees')
+   degreesDetails.setAttribute('class', 'degreeDetails')
+   weatherCondition.innerText = data[0].description
+   degrees.innerText = `${data[0].temperature.temp} F°`
+   degreeHigh.innerText = `${data[0].temperature.temp_max} F°`
+   degreeLow.innerText = `${data[0].temperature.temp_min} F°`
+   degreeFeel.innerText = `${data[0].temperature.feels_like} F°`
+
+
+   mainInfo.appendChild(generalInfo)
+   generalInfo.appendChild(weatherCondition)
+   generalInfo.appendChild(degreesContainer)
+   degreesContainer.appendChild(degrees)
+   degreesContainer.appendChild(degreesDetails)
+   degreesDetails.appendChild(degreeFeel)
+   degreesDetails.appendChild(degreeHigh)
+   degreesDetails.appendChild(degreeLow)
 }
 
 const clearPage = () => {
