@@ -19,7 +19,8 @@ html, body {
 .searchbox {
     display: flex;
     justify-content: flex-end;
-    margin-top: 2%;
+    margin-top: 3%;
+    margin-right: 5%;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55 );
 }
 
