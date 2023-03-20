@@ -9,6 +9,8 @@ export const renderPage = (data) => {
 }
 
 const displayWeather = (data) => {
+   let header = document.createElement('div')
+   let headerInfo = document.createElement('h1')
    let generalInfo = document.createElement('div')
    let weatherCondition = document.createElement('h3')
    let degreesContainer = document.createElement('div')
@@ -22,13 +24,16 @@ const displayWeather = (data) => {
    let humidity = document.createElement('p')
    let pressure = document.createElement('p')
 
+   header.setAttribute('class', 'location')
    generalInfo.setAttribute('class', 'generalInfo')
    weatherCondition.setAttribute('class', 'condition')
    degreesContainer.setAttribute('class', 'degreesContainer')
    degrees.setAttribute('class', 'degrees')
    degreesDetails.setAttribute('class', 'degreeDetails')
    extraDetails.setAttribute('class', 'extraDetails')
-   weatherCondition.innerText = data[0].description
+   headerInfo.innerText = `${data[0].location.city}, ${data[0].location.country}`
+   let weatherConditionInfo = data[0].description
+   weatherCondition.innerText = weatherConditionInfo.toUpperCase()
    degrees.innerText = `${data[0].temperature.temp} F°`
    degreeHigh.innerText = `High: ${data[0].temperature.temp_max} F°`
    degreeLow.innerText = `Low: ${data[0].temperature.temp_min} F°`
@@ -38,6 +43,8 @@ const displayWeather = (data) => {
    pressure.innerText = `Pressure: ${data[0].temperature.pressure}`
 
    mainInfo.appendChild(generalInfo)
+   generalInfo.appendChild(header)
+   header.appendChild(headerInfo)
    generalInfo.appendChild(weatherCondition)
    generalInfo.appendChild(degreesContainer)
    degreesContainer.appendChild(degrees)
