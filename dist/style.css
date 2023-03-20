@@ -92,4 +92,13 @@ html, body {
     #content {
         height: 100vh;
     }
+
+    .searchbox {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .searchbox input {
+        width: 50%;
+    }
 }
