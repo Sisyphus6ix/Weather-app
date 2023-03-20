@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@500&display=swap');
 
-html, body {
-    padding: 0;
+* {   
     margin: 0;
 }
 
@@ -33,7 +32,7 @@ html, body {
 .main {
     display: flex;
     flex-direction: column;
-    margin-top: 15%;
+    margin-top: 25%;
     margin-left: 10%;
 }
 
