@@ -31,16 +31,3 @@ export const searchedLocation = async () => {
     searchbar.value = ''
     return array
 }
-
-
-// export const getForecast = () => {
-//     let userInput = searchbar.value
-
-//     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${userInput}&appid=eff6ec262c369ae8e66d2b9f4ed0a602`, {mode: 'cors'})
-//         .then(function(response) {
-//             return response.json();
-//         })
-//         .then(function(response) {
-//             console.log(response)
-//         });
-// }

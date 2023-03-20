@@ -1,3 +1,5 @@
+import { searchedLocation } from "../info"
+
 let mainInfo = document.getElementsByClassName('main')[0]
 
 export const renderPage = (data) => {
@@ -5,17 +7,6 @@ export const renderPage = (data) => {
    clearPage()
    displayWeather(data)
 }
-
-// const getDate = () => {
-//    const date = new Date();
-
-//    let day = date.getDate();
-//    let month = date.getMonth() + 1;
-//    let year = date.getFullYear();
-
-//    let currentDate = `${day}-${month}-${year}`;
-//    console.log(currentDate);
-// }
 
 const displayWeather = (data) => {
    let generalInfo = document.createElement('div')
@@ -62,4 +53,13 @@ const displayWeather = (data) => {
 
 const clearPage = () => {
    mainInfo.innerHTML = ''
+}
+
+export const searchboxCheck = () => {
+   let searchbox = document.getElementsByClassName('searchbox')[0]
+   
+   if (searchbox.classList.contains('active')) {
+      searchedLocation()
+      .then(renderPage)
+   }
 }
