@@ -5,9 +5,8 @@
 }
 
 .searchbox {
-    /* position: relative; */
-    /* display: flex; */
-    /* justify-content: flex-end; */
+    display: flex;
+    justify-content: flex-end;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55 );
 }
 
@@ -37,4 +36,12 @@
 .extraDetails {
     display: flex;
     gap: 30px;
+}
+
+.searchbox input, #cancelBtn {
+    display: none;
+}
+
+.searchbox.active input, .searchbox.active #cancelBtn {
+    display: block;
 }
