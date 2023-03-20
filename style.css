@@ -87,3 +87,9 @@ html, body {
     
     padding: 8px;
 }
+
+@media (max-width: 770px) {
+    #content {
+        height: 100vh;
+    }
+}
