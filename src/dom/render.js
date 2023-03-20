@@ -34,12 +34,12 @@ const displayWeather = (data) => {
    headerInfo.innerText = `${data[0].location.city}, ${data[0].location.country}`
    let weatherConditionInfo = data[0].description
    weatherCondition.innerText = weatherConditionInfo.toUpperCase()
-   degrees.innerText = `${data[0].temperature.temp} F°`
-   degreeHigh.innerText = `High: ${data[0].temperature.temp_max} F°`
-   degreeLow.innerText = `Low: ${data[0].temperature.temp_min} F°`
-   degreeFeel.innerText = `Feels like: ${data[0].temperature.feels_like} F°`
-   windSpeed.innerText = `Wind: ${data[0].wind} Km/h`
-   humidity.innerText = `Humidity: ${data[0].temperature.humidity}.0 %`
+   degrees.innerText = Math.round(((`${data[0].temperature.temp}` - 273.15) * 1.8) + 32) + '°F'
+   degreeHigh.innerText = `High: ` + Math.round(((`${data[0].temperature.temp_max}` - 273.15) * 1.8) + 32) + '°F'
+   degreeLow.innerText = `Low: ` + Math.round(((`${data[0].temperature.temp_min}` - 273.15) * 1.8) + 32) + '°F'
+   degreeFeel.innerText = `Feels like: `+ Math.round(((`${data[0].temperature.feels_like}` - 273.15)* 1.8) + 32)  + '°F'
+   windSpeed.innerText = `Wind: ` + Math.round(`${data[0].wind}` * 0.6214) + ' MPH'
+   humidity.innerText = `Humidity: ${data[0].temperature.humidity}.0%`
    pressure.innerText = `Pressure: ${data[0].temperature.pressure}`
 
    mainInfo.appendChild(generalInfo)
