@@ -98,11 +98,7 @@ html, body {
 }
 
 @media (max-width: 770px) {
-
-    body {
-        min-height: -webkit-fill-available;
-    }
-
+    
     .searchbox {
         display: flex;
         justify-content: flex-end;
