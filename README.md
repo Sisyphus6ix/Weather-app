@@ -14,4 +14,4 @@ This project is created for the sole purpose of learning and part of the "The Od
 
 <hr>
 
-![](../../Downloads/8bb34b17bcb872fa739a63bdb3a2812d.jpg)
+![8bb34b17bcb872fa739a63bdb3a2812d](https://user-images.githubusercontent.com/111195345/227416276-9b2495c6-8128-4186-862f-f19dbfce263a.jpg)
