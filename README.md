@@ -14,4 +14,4 @@ This project is created for the sole purpose of learning and part of the "The Od
 
 <hr>
 
-![Mock Up Example](../../Downloads/8bb34b17bcb872fa739a63bdb3a2812d.jpg)
+![](../../Downloads/8bb34b17bcb872fa739a63bdb3a2812d.jpg)
